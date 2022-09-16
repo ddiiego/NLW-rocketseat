@@ -20,6 +20,32 @@ body * {
     line-height: 160%;
 }
 
+header img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+header div {
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #9572fc 0%, #43e7ad 100%);
+    border-radius: 50%;
+    display: flex;
+    padding: 4px;
+
+    transition: transform .3s;
+}
+
+header {
+    /* text-align: center; para centralizar a imagem usada, a imagem usada está tipo texto */
+    padding-top: 32px;
+    height: calc(120px + 32px); /* referente a animação */
+
+}
+
+header div:hover /* para ativar quando mouser passar pro cima */ {
+    transform: scale(1.1);
+}
 /*
 main * {
     border: 1px solid red;  PARA VISUALIAR AS BORDAS
@@ -28,7 +54,7 @@ main * {
 main {
     max-width: 580px; /*Largura máxima caixa main */
     width: 90%; /* largura do tamanho da tela */
-    margin: auto; /* para controlar as marges centralizando */
+    margin: 32px auto; /* para controlar as marges centralizando */
     display: flex;
     flex-direction: column; /* mantem um embaixo do outro diferente do display: flex; */
     gap: 24px;
@@ -71,9 +97,62 @@ section ul {
 .games-list img {
     width: 90px;
     border-radius: 8px;
+    border:1px solid #443e54;
 }
 
 .channel-list img {
     border-radius: 50px; /*bordas aredondadas */
     width: 70px;
+    border:1px solid #443e54;
+
+}
+
+section ul li:hover{
+    transform: scale(1.1); 
+}
+section ul li{
+    transition: transform .3s;
+}
+
+header div {
+    animation: fromTop .7s .2s backwards;
+    
+}
+
+main section {
+    animation: fromBottom .7s;
+}
+main section:nth-child(1){
+    animation-delay: 0;
+}
+
+main section:nth-child(2){
+    animation-delay: .4s;
+}
+
+main section:nth-child(3){
+    animation-delay: .8s;
+}
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fromBotton {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
