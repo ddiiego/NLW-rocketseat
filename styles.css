@@ -36,6 +36,8 @@ header div {
     transition: transform .3s;
 }
 
+
+
 header {
     /* text-align: center; para centralizar a imagem usada, a imagem usada está tipo texto */
     padding-top: 32px;
@@ -119,8 +121,20 @@ header div {
     
 }
 
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 main section {
-    animation: fromBottom .7s;
+    animation: fromBotton .7s;
 }
 main section:nth-child(1){
     animation-delay: 0;
@@ -132,17 +146,6 @@ main section:nth-child(2){
 
 main section:nth-child(3){
     animation-delay: .8s;
-}
-@keyframes fromTop {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 @keyframes fromBotton {
